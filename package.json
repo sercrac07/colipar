@@ -1,0 +1,29 @@
+{
+  "name": "cliuc",
+  "description": "Simplifies capturing and parsing user input from the command line.",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sercrac07/cliuc.git"
+  },
+  "scripts": {
+    "build": "tsup",
+    "lint": "tsc",
+    "test": "ts-node test/index.ts"
+  },
+  "keywords": [
+    "cli",
+    "input"
+  ],
+  "author": "sercrac07",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.12.10",
+    "ts-node": "^10.9.2",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5"
+  }
+}
