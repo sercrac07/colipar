@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsup",
-    "lint": "tsc",
+    "lint": "eslint .",
     "test": "ts-node test/index.ts"
   },
   "keywords": [
@@ -21,9 +21,13 @@
   "author": "sercrac07",
   "license": "MIT",
   "devDependencies": {
+    "@eslint/js": "^9.9.0",
+    "@types/eslint__js": "^8.42.3",
     "@types/node": "^20.12.10",
+    "eslint": "^9.9.0",
     "ts-node": "^10.9.2",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.2.0"
   }
 }
