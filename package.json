@@ -11,7 +11,7 @@
   },
   "scripts": {
     "build": "tsup",
-    "lint": "eslint .",
+    "lint": "eslint **/*.ts",
     "test": "ts-node test/index.ts"
   },
   "keywords": [
