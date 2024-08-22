@@ -1,5 +1,5 @@
 {
-  "name": "cliuc",
+  "name": "colipar",
   "description": "Simplifies capturing and parsing user input from the command line.",
   "version": "1.0.0",
   "main": "dist/index.js",
@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sercrac07/cliuc.git"
+    "url": "https://github.com/sercrac07/colipar.git"
   },
   "scripts": {
     "build": "tsup",
