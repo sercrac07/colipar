@@ -54,6 +54,17 @@ Captures and parses user input from the command line.
     - `"boolean"`: The flag is a boolean.
   - `short` (string | undefined): The short version of the flag.
 
+**Example:**
+
+```javascript
+const input = colipar({
+  flags: {
+    msg: { type: "string", short: "m" },
+    version: { type: "boolean", short: "v" }
+  }
+})
+```
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for improvement, please open an issue or submit a pull request. Here are some ways you can contribute:
