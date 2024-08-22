@@ -1,21 +1,30 @@
 import { argv } from "node:process"
 import { getFlag } from "./lib/utils"
 
-interface CliucOptions<Flags extends Flag<string>> {
+interface ColiparOptions<Flags extends Flag<string>> {
+  /** The flags to capture and parse. */
   flags: Flags
 }
 
 type Flag<T extends string> = {
+  /** The name of the flag. */
   [key in T]: FlagOptions
 }
 
 interface FlagOptions {
+  /** The type of the flag. */
   type: "string" | "boolean"
+  /** The short version of the flag. */
   short?: string
 }
 
-export default function cliuc<T extends string, Flags extends Flag<T>>(
-  options: CliucOptions<Flags>
+/**
+ * Captures and parses user input from the command line.
+ *
+ * [API Reference](https://github.com/sercrac07/colipar?tab=readme-ov-file#coliparoptions)
+ */
+export default function colipar<T extends string, Flags extends Flag<T>>(
+  options: ColiparOptions<Flags>
 ): {
   [Key in keyof typeof options.flags]: (typeof options.flags)[Key]["type"] extends "string" ? string : (typeof options.flags)[Key]["type"] extends "boolean" ? boolean : never
 } {
