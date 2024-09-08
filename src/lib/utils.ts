@@ -11,7 +11,7 @@ export function getFlag<T extends "string" | "boolean">(flag: string, type: T, a
       // Interpret specific values as true/false
       return (value === "true") as T extends "string" ? string | undefined : boolean
     } else {
-      return false as T extends "string" ? string | undefined : boolean
+      return undefined as T extends "string" ? string | undefined : boolean
     }
   } else if (type === "string") {
     if (flagIndex !== -1) {
