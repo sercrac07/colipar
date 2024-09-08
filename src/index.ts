@@ -21,12 +21,12 @@ interface FlagOptions {
 /**
  * Captures and parses user input from the command line.
  *
- * [API Reference](https://github.com/sercrac07/colipar?tab=readme-ov-file#coliparoptions)
+ * [API Reference](https://github.com/sercrac07/colipar#coliparoptions)
  */
 export default function colipar<T extends string, Flags extends Flag<T>>(
   options: ColiparOptions<Flags>
 ): {
-  [Key in keyof typeof options.flags]: (typeof options.flags)[Key]["type"] extends "string" ? string : (typeof options.flags)[Key]["type"] extends "boolean" ? boolean : never
+  [Key in keyof typeof options.flags]: ((typeof options.flags)[Key]["type"] extends "string" ? string : (typeof options.flags)[Key]["type"] extends "boolean" ? boolean : never) | undefined
 } {
   const args = argv.slice(2)
 
