@@ -35,10 +35,10 @@ export default function colipar<T extends string, Flags extends Flag<T>>(
     const flag = options.flags[key as T]
     if (flag.type === "boolean") {
       obj[key] = getFlag(`--${key}`, "boolean", args)
-      if (flag.short) obj[key] = getFlag(`-${flag.short}`, "boolean", args)
+      if (flag.short && obj[key] === undefined) obj[key] = getFlag(`-${flag.short}`, "boolean", args)
     } else {
       obj[key] = getFlag(`--${key}`, "string", args)
-      if (flag.short) obj[key] = getFlag(`-${flag.short}`, "string", args)
+      if (flag.short && obj[key] === undefined) obj[key] = getFlag(`-${flag.short}`, "string", args)
     }
   })
   return obj as {
