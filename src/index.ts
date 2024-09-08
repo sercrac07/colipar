@@ -32,12 +32,13 @@ export default function colipar<T extends string, Flags extends Flag<T>>(
 
   const obj = {} as Record<string, string | boolean | undefined>
   Object.keys(options.flags).forEach(key => {
-    if (options.flags[key as T].type === "boolean") {
+    const flag = options.flags[key as T]
+    if (flag.type === "boolean") {
       obj[key] = getFlag(`--${key}`, "boolean", args)
-      if (options.flags[key as T].short) obj[key] = getFlag(`-${options.flags[key as T].short}`, "boolean", args)
+      if (flag.short) obj[key] = getFlag(`-${flag.short}`, "boolean", args)
     } else {
       obj[key] = getFlag(`--${key}`, "string", args)
-      if (options.flags[key as T].short) obj[key] = getFlag(`-${options.flags[key as T].short}`, "string", args)
+      if (flag.short) obj[key] = getFlag(`-${flag.short}`, "string", args)
     }
   })
   return obj as {
