@@ -46,13 +46,11 @@ my-command # output: { msg: undefined, version: false }
 
 Captures and parses user input from the command line.
 
-**Options:**
-
-- `flags` (object): The flags to capture and parse.
-  - `type` (string): The type of the flag.
-    - `"string"`: The flag is a string.
-    - `"boolean"`: The flag is a boolean.
-  - `short` (string | undefined): The short version of the flag.
+- `options` (object): The options for capturing and parsing user input.
+  - `flags` (object): The flags to capture and parse.
+    - `[key]` (string): The name of the flag.
+      - `type` (string): The type of the flag. Can be either `"string"` or `"boolean"`.
+      - `short` (string): The short version of the flag.
 
 **Example:**
 
